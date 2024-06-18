@@ -1,0 +1,49 @@
+SELECT  journey.JourneyName
+    , smsTracking.MobileMessageTrackingID
+    , smsTracking.EID
+    , smsTracking.MID
+    , smsTracking.Mobile
+    , smsTracking.MessageID
+    , smsTracking.KeywordID
+    , smsTracking.CodeID
+    , smsTracking.ConversationID
+    , smsTracking.CampaignID
+    , smsTracking.Sent
+    , smsTracking.Delivered
+    , smsTracking.Undelivered
+    , smsTracking.Unsub
+    , smsTracking.OptIn
+    , smsTracking.OptOut
+    , smsTracking.Outbound
+    , smsTracking.Inbound
+    , smsTracking.CreateDateTime
+    , smsTracking.ModifiedDateTime
+    , smsTracking.ActionDateTime
+    , smsTracking.MessageText
+    , smsTracking.IsTest
+    , smsTracking.MobileMessageRecurrenceID
+    , smsTracking.ResponseToMobileMessageTrackingID
+    , smsTracking.IsValid
+    , smsTracking.InvalidationCode
+    , smsTracking.SMSJobID
+    , smsTracking.SMSBatchID
+    , smsTracking.SendID
+    , smsTracking.SendSplitID
+    , smsTracking.SendSegmentID
+    , smsTracking.SendJobID
+    , smsTracking.SendGroupID
+    , smsTracking.SendPersonID
+    , smsTracking.SubscriberID
+    , smsTracking.SubscriberKey
+    , smsTracking.SMSStandardStatusCodeId
+    , smsTracking.Description
+    , smsTracking.Name
+    , smsTracking.ShortCode
+    , smsTracking.SharedKeyword
+    , smsTracking.Ordinal
+    , smsTracking.FromName
+    , smsTracking.JBDefinitionID
+    , smsTracking.JBActivityID
+FROM _SMSMessageTracking AS smsTracking
+join _journey journey on smsTracking.JBDEFINITIONID = journey.VERSIONID
+WHERE journey.JourneyName = 'INSERT_JOURNEY_NAME'
